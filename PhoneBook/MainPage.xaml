@@ -9,6 +9,30 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <GridView 
+            Name="Employees"
+            ItemsSource = "{Binding}"
+            Height="300"
+            Width="400">
+            <GridView.ItemTemplate>
+            <DataTemplate x:DataType="local:Contact">
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <TextBlock Text="{x:Bind FirstName}"
+                               Width="95"
+                               Margin="2"/>
+                    <TextBlock Text="{x:Bind LastName}"
+                               Width="95"
+                               Margin="2"
+                               x:Phase="1"/>
+                    <TextBlock Text="{x:Bind PhoneNumber}"
+                               Width="95"
+                               Margin="2"
+                               x:Phase="2"/>
+                </StackPanel>
+            </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        
         <Button 
             Content="Add Contact" 
             Click="Button_Click"
@@ -17,7 +41,6 @@
             Height="100"
             Width="300"
             FontWeight="Bold"/>
-        
-      
+    
     </Grid>
 </Page>

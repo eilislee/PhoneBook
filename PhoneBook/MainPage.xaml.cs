@@ -13,7 +13,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace PhoneBook
 {
@@ -25,7 +24,13 @@ namespace PhoneBook
         public MainPage()
         {
             this.InitializeComponent();
-            Contact.GetContact();
+            
+        }
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            DataContext = await Contact.GetContactsAsync();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
