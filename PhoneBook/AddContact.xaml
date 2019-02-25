@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="PhoneBook.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhoneBook"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <StackPanel>
+            <TextBlock 
+                Name="firstNameLabel" 
+                Text="First Name: " 
+                Padding="10" 
+                FontWeight="Bold" />
+            <TextBox 
+                Name="firstNameText" 
+                Text="{Binding FirstName, Mode=TwoWay}"
+                Height="40"
+                Padding="10" 
+                Background="LightGray"/>
+            <TextBlock 
+                Name="lastNameLabel" 
+                Text="Last Name: " 
+                Padding="10" 
+                FontWeight="Bold"/>
+            <TextBox 
+                Name="LastNameText" 
+                Text="{Binding LastName, Mode=TwoWay}" 
+                Height="40"
+                Padding="2" 
+                Background="LightGray"/>
+            <TextBlock 
+                Name="PhoneNumberLabel" 
+                Text="Phone Number: " 
+                Padding="10" 
+                FontWeight="Bold"/>
+            <TextBox 
+                Name="phoneNumberText" 
+                Text="{Binding PhoneNumber, Mode=TwoWay}" 
+                Height="40"
+                Padding="2" 
+                Background="LightGray"/>
+            <Button Content="Add Contact"
+                    Click="Add_Click"
+                    Padding="10"
+                    Width="200"
+                    FontWeight="Bold"
+                    Margin="10, 10, 10, 10"/>
+            <Button Content="Back"
+                    Click="Back_Click"
+                    Padding="10"
+                    Width="200"
+                    FontWeight="Bold"
+                    Margin="10, 10, 10, 10"/>
+        </StackPanel>
+    </Grid>
+</Page>
